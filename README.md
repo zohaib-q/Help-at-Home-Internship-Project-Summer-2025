@@ -1,5 +1,6 @@
 # devops-common-services
 A repo to hold tools used for devops purposes.
+This code when run locally creates a PR to resolve the "Unpinned tag for a non-immutable Action in workflow" code scan vulnerability
 
 7 verified libraries:
   1. hashicorp/setup-terraform
