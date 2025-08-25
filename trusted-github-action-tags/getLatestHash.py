@@ -1,17 +1,26 @@
 import requests
 from actions import actions
 import pandas as pd
-
+import os
 
 class tagToSHA:
     def __init__(self):
         '''
         initializes the headers
         '''
+        # self.headers = {
+        #     "Accept": "application/vnd.github+json",
+        #     "X-GitHub-Api-Version": "2022-11-28"
+        # }
+        # self.verify = True
+        token = os.getenv("GITHUB_TOKEN")  # GitHub Actions sets this automatically
         self.headers = {
             "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28"
+            "X-GitHub-Api-Version": "2022-11-28",
+            "Authorization": f"Bearer {token}" if token else None
         }
+        # remove None values if token not found
+        self.headers = {k: v for k, v in self.headers.items() if v is not None}
         self.verify = True
 
     def get_latest_release_tag(self, owner, repo):
@@ -114,3 +123,4 @@ if __name__ == "__main__":
     '''
     df = tagToSHA()
     print(df.form_table())
+
