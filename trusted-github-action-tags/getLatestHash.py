@@ -122,5 +122,6 @@ if __name__ == "__main__":
     Here so the YAML file outputs to actions the updated table on each run
     '''
     df = tagToSHA()
-    print(df.form_table())
+    df.form_table()
+
 
