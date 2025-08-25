@@ -29,6 +29,5 @@ How to get code to work:
     - Go through each file and set self.verify to False
     - The tag of the library you are trying to replace may not be in actions.py; add it there then rerun
     - There may exist a branch with the same name. You can rename the branch at merger.py line 18
-    - The github token expired so you need to make a new classic token with proper permissions and place it in systems manager parameter store at
-      '/devops-common-services/github/zohaib-token'
+    - The github token expired so you need to make a new classic token with proper permissions and place it in systems manager parameter store
             - the token should have full repo and workflow scope
